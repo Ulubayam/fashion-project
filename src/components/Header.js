@@ -1,6 +1,7 @@
+
 import React from "react";
 import styled from "styled-components";
-import { Sorter } from "./index.js";
+import { Sorter, Sidebar, Product } from "./index.js";
 
 export const Wrapper = styled.div`
   width: 80%;
@@ -25,81 +26,35 @@ export const Title = styled.h1`
   float: left;
   padding-left: 153pt;
 `;
-export const Info = styled.span`
- font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 12pt;
-  line-height: 40pt;
-  letter-spacing: 1pt;
-  padding-right:140pt;
-`;
-export const Sort = styled.h2`
-  float: right;
-  padding-right: 35px;
-  font-size: 18pt;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-weight: lighter;
-  font-weight: bold;
-  line-height: 40px;
-`;
+
 export const Nav = styled.nav`
   float: left;
   padding-left: 40pt;
   min-width: 260pt;
   line-height: 0px;
 `;
-export const Button = styled.button`
- font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  font-size: 12pt;
-  line-height: 40pt;
-  letter-spacing: 0;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  outline: none;
-  color: #ff6008;
-`;
 
-export const Section = styled.section`
-  max-width: 260pt;
-  float: right;
+export const Section = styled.div`
+float: left;
+margin-top:100pt;
+padding-left: 80px;
+width: 70%;
+height: 300px;
 `;
-export const Break = styled.hr`
-border-top: 1px solid gray;
-`
 
 function Header() {
   return (
     <Wrapper>
       <Head>
         <Title>Women</Title>
-        <Sort>
           <Sorter></Sorter>
-        </Sort>
-        <Sort>Sort by</Sort>
       </Head>
       <Nav>
-        <Info>FILTERS</Info>
-        <Button>RESET</Button>
-        <Break/>
+      <Sidebar/>
       </Nav>
-      <Section>Filters</Section>
-      {/* <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div className="container">
-                    <a className="navbar-brand" href="#">Women</a>
-                    <div className="collapse navbar-collapse" id="navbarResponsive">
-                        <ul className="navbar-nav ml-auto">
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/">Home</Link>
-                            </li>
-                            <li className="nav-item">
-                               
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav> */}
+      <Section>
+        <Product></Product>
+        </Section>
     </Wrapper>
   );
 }
