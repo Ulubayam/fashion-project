@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Sorter, Sidebar, Product } from "./index.js";
+import { Sorter } from "./index.js";
 
 export const Wrapper = styled.div`
   width: 80%;

@@ -52,20 +52,20 @@ export const Div = styled.div`
 `;
 
 function Product(props) {
-  const { id, imageUrl, name, price, badges } = props.products;
+  const {imageUrl, name, price, badges } = props.products;
   return (
-        <Card key={name}>
-          <Div>
+        <Card>
+          <Div key={props.products.id}>
             {badges.map(badge => {
               return badge === "new" ? (
-                <New key={name}>New</New>
+                <New>New</New>
               ) : (
-                <Discount key={name}>Discount</Discount>
+                <Discount>Discount</Discount>
               );
             })}
-            <Image src={imageUrl} />
+            <Image src={imageUrl}/>
           </Div>
-          <Text>{name}</Text>
+          <Text >{name}</Text>
           <Price> ${price}</Price>
         </Card>
   );

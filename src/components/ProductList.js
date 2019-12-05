@@ -38,27 +38,27 @@ class ProductList extends React.Component {
   componentDidMount() {
     this.getProducts();
   }
-  // componentDidUpdate(prevProps) {
-  //     if(prevProps.activeFilter !== this.props.activeFilter) {
-  //         this.filterProducts();
-  //     }
-  // }
-  // filterProducts=() => {
-  //     // if(!this.props.activeFilter) {
-  //     //     this.setState({
-  //     //         products: this.state._products.filter((product) => {
 
-  //     //         })
-  //     //     })
-  //     // }
-  // }
+  componentDidUpdate(prevProps,nextProps) {
+        this.filterProducts();
+    
+}
+  filterProducts = () => {
+      console.log(this.props.activeFilter)
+     if(this.props.activeFilter === "New"){
+         console.log("hey")
+     }else {
+         console.log("hey2")
+     }
+    
+}
 
   render() {
     return (
       <Section>
         <Cards>
-          {this.state.products.map(item => {
-            return <Product {...item} />
+          {this.state.products.map((item,i) => {
+            return <Product key={i} {...item} />
           })}
         </Cards>
       </Section>
