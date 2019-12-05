@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const List = styled.ul`
-list-style-type: none;
-  padding: 0px 20px;
-  background-color: #fff;
+const Aside = styled.aside`
+margin: 0 1.5% 24px 1.5%;
+margin-top:100pt;
+float: left;
+width: 20%;
 `;
 
 const ListItem = styled.li`
@@ -28,33 +29,39 @@ color: black;
 }
 `
 export const Button = styled.button`
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  font-size: 12pt;
-  line-height: 40pt;
-  letter-spacing: 0;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  outline: none;
-  color: #ff6008;
+font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+background-color: transparent;
+background-repeat: no-repeat;
+font-size: 12pt;
+line-height: 40pt;
+letter-spacing: 1pt;
+border: none;
+cursor: pointer;
+overflow: hidden;
+outline: none;
+color: #ff6008;
+ margin-left:100pt;
+`;
+const List = styled.ul`
+list-style-type: none;
+  padding: 0px 20px;
+  background-color: #fff;
 `;
 export const Info = styled.span`
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 12pt;
-  line-height: 40pt;
-  letter-spacing: 1pt;
-  padding-right: 140pt;
+font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+font-size: 12pt;
+line-height: 40pt;
+letter-spacing: 1pt;
+float: left;
 `;
 export const Break = styled.hr`
-  border-top: 1px solid gray;
+border-top: 1px solid gray;
 `;
 
 class Sidebar extends React.Component {
   render() {
     return (
-      <div>
+      <Aside>
         <Info>FILTERS</Info>
         <Button>RESET</Button>
         <Break />
@@ -63,7 +70,7 @@ class Sidebar extends React.Component {
           <ListItem><Link href="#">> Sales</Link></ListItem>
 
         </List>
-      </div>
+      </Aside>
     );
   }
 }
