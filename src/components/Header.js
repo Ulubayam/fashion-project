@@ -54,8 +54,6 @@ function Header() {
         <Title>Woman</Title>
         <Sorter />
       </Head>
-      <Sidebar />
-      <Product />
     </Wrapper>
   );
 }
