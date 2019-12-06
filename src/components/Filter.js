@@ -2,10 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Aside = styled.aside`
-  margin: 0 1.5% 24px 1.5%;
-  margin-top: 100pt;
   float: left;
-  width: 20%;
 `;
 
 const ListItem = styled.li`

@@ -1,15 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Wrapper = styled.nav`
-  font-size: 18pt;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-weight: lighter;
-  margin-top: 12pt;
-`;
 export const List = styled.ul`
-  margin-left: 1025pt;
-  margin-top: 20pt;
+float:right;
 `;
 export const ListItem = styled.li`
   list-style: none;
@@ -46,7 +39,6 @@ class Sorter extends React.Component {
   };
   render() {
     return (
-      <Wrapper>
         <List>
           <ListItem>Sort By</ListItem>
           <ListItem>
@@ -60,7 +52,6 @@ class Sorter extends React.Component {
             </Select>
           </ListItem>
         </List>
-      </Wrapper>
     );
   }
 }

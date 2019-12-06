@@ -2,15 +2,14 @@ import React from "react";
 import { Sorter, Sidebar, ProductList } from "../components";
 import styled from "styled-components";
 
-
 export const Wrapper = styled.div`
   width: 80%;
   margin: 0 auto;
+  margin-top:20px;
 `;
 export const Head = styled.header`
   font-size: 24px;
   width: 100%;
-  padding-right: 50px;
   height: 100px;
   background: white;
   position: fixed;
@@ -71,10 +70,7 @@ class Home extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Head>
-          <Title>Woman</Title>
-          <Sorter />
-        </Head>
+     <Sorter />
         <Sidebar
           onFilterProducts={this.filterProducts}
           activeFilter={this.state.activeFilter}

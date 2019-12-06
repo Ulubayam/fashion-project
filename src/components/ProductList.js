@@ -4,10 +4,8 @@ import axios from "axios";
 import styled from "styled-components";
 
 export const Section = styled.section`
-  margin: 0 1.5% 24px 1.5%;
-  margin-top: 100pt;
   float: right;
-  width: 63%;
+  width: 75%;
 `;
 export const Cards = styled.main`
   display: flex;
@@ -24,7 +22,7 @@ class ProductList extends React.Component {
     };
   }
   getProducts = () => {
-    const apiBaseUrl = "https://project.free.beeceptor.com";
+    const apiBaseUrl = "https://mockapi.free.beeceptor.com";
     const endpoint = "/products";
     axios.get(`${apiBaseUrl}${endpoint}`).then(response => {
       const data = response.data;
@@ -39,16 +37,28 @@ class ProductList extends React.Component {
     this.getProducts();
   }
 
-  componentDidUpdate(prevProps,nextProps) {
+  componentDidUpdate() {
         this.filterProducts();
     
 }
   filterProducts = () => {
-      console.log(this.props.activeFilter)
      if(this.props.activeFilter === "New"){
-         console.log("hey")
+    this.state._products.filter((item) => {
+        item.products.badges.forEach((e) => {
+          if(e === "new") {
+          console.log(item);
+          }
+        })
+      })
      }else {
-         console.log("hey2")
+      this.state._products.filter((item) => {
+        item.products.badges.forEach((e) => {
+          if(e === "discount") {
+          console.log(item);
+          }
+        })
+      })
+
      }
     
 }
