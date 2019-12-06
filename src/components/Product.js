@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Card = styled.article`
   width: 263pt;
@@ -27,7 +28,7 @@ export const New = styled.span`
   position: absolute;
   right: -20px;
   top: 10px;
-  background: red;
+  background: cornflowerblue;
   text-align: center;
   border-radius: 30px 30px 30px 30px;
   color: white;
@@ -38,7 +39,7 @@ export const Discount = styled.span`
   position: absolute;
   left: -20px;
   top: 10px;
-  background: blue;
+  background: indianred;
   text-align: center;
   border-radius: 30px 30px 30px 30px;
   color: white;
@@ -52,22 +53,29 @@ export const Div = styled.div`
 `;
 
 function Product(props) {
-  const {imageUrl, name, price, badges } = props.products;
+  const { id, imageUrl, name, price, badges } = props.products;
   return (
-        <Card>
-          <Div key={props.products.id}>
-            {badges.map(badge => {
-              return badge === "new" ? (
-                <New>New</New>
-              ) : (
-                <Discount>Discount</Discount>
-              );
-            })}
-            <Image src={imageUrl}/>
-          </Div>
-          <Text >{name}</Text>
-          <Price> ${price}</Price>
-        </Card>
+    <Card>
+      <Link
+        to={{
+          pathname: `/detail/${id}`,
+          products: props
+        }}
+      >
+        <Div>
+          {badges.map(badge => {
+            return badge === "new" ? (
+              <New>New</New>
+            ) : (
+              <Discount>Discount</Discount>
+            );
+          })}
+          <Image src={imageUrl} />
+        </Div>
+        <Text>{name}</Text>
+        <Price> ${price}</Price>
+      </Link>
+    </Card>
   );
 }
 export default Product;

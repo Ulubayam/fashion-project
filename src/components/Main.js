@@ -1,15 +1,16 @@
 import React from 'react';
-import {Route, Switch} from "react-router";
+import {Router, Route, Switch} from "react-router";
 import {Detail, Home} from "../pages";
+import history from '../history'
 
 function Main(props) {
     return (
-        <div>
+        <Router history={history}> 
             <Switch>
                 <Route exact path="/" component={Home}/>
-                <Route exact path="/detail" component={Detail}/>
+                <Route exact path="/detail/:id" component={Detail}/>
             </Switch>
-        </div>
+        </Router>
     );
 }
 

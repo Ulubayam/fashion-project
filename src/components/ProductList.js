@@ -2,6 +2,7 @@ import React from "react";
 import { Product } from "../components";
 import axios from "axios";
 import styled from "styled-components";
+import { getKeyByValue } from "../helpers";
 
 export const Section = styled.section`
   float: right;
@@ -22,7 +23,7 @@ class ProductList extends React.Component {
     };
   }
   getProducts = () => {
-    const apiBaseUrl = "https://mockapi.free.beeceptor.com";
+    const apiBaseUrl = "https://productapi.free.beeceptor.com";
     const endpoint = "/products";
     axios.get(`${apiBaseUrl}${endpoint}`).then(response => {
       const data = response.data;
@@ -37,42 +38,47 @@ class ProductList extends React.Component {
     this.getProducts();
   }
 
-  componentDidUpdate() {
-        this.filterProducts();
-    
-}
+  componentDidUpdate(prevProps) {
+    if (prevProps.activeFilter !== this.props.activeFilter) {
+      this.filterProducts();
+    }
+  }
   filterProducts = () => {
-     if(this.props.activeFilter === "New"){
-    this.state._products.filter((item) => {
-        item.products.badges.forEach((e) => {
-          if(e === "new") {
-          console.log(item);
+    if (this.props.activeFilter === "New") {
+      this.state._products.map(item => {
+        item.products.badges.find(elem => {
+          if (elem === "new") {
+            console.log(item);
           }
-        })
-      })
-     }else {
-      this.state._products.filter((item) => {
-        item.products.badges.forEach((e) => {
-          if(e === "discount") {
-          console.log(item);
-          }
-        })
-      })
-
-     }
-    
-}
+        });
+      });
+    } else if (this.props.activeFilter === "Discount") {
+      this.state._products.filter(item => {
+        let obj = getKeyByValue(item.products.badges, "new");
+        console.log(obj);
+      });
+      // this.state.products.map((item) => {
+      //   item.products.badges.find((elem) => {
+      //     if(elem === "discount") {
+      //      this.setState({
+      //        products: [...this.state.products].concat([item])
+      //      })
+      //     }
+      //   })
+      // })
+    }
+  };
 
   render() {
     return (
       <Section>
         <Cards>
-          {this.state.products.map((item,i) => {
-            return <Product key={i} {...item} />
+          {this.state.products.map(item => {
+            return <Product {...item} />;
           })}
         </Cards>
       </Section>
-    )
+    );
   }
 }
 export default ProductList;

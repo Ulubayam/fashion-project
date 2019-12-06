@@ -36,6 +36,7 @@ class Sorter extends React.Component {
   }
   handleChange = event => {
     this.setState({ value: event.target.value });
+    console.log(this.state.value)
   };
   render() {
     return (
@@ -47,6 +48,7 @@ class Sorter extends React.Component {
               onChange={this.handleChange}
               placeholder="Sort"
             >
+              <option value="null">Select Option</option>
               <option value="high">High to Low price</option>
               <option value="low">Low to High price</option>
             </Select>

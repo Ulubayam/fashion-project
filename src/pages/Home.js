@@ -70,7 +70,7 @@ class Home extends React.Component {
   render() {
     return (
       <Wrapper>
-     <Sorter />
+     <Sorter  />
         <Sidebar
           onFilterProducts={this.filterProducts}
           activeFilter={this.state.activeFilter}

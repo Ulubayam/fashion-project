@@ -64,20 +64,20 @@ function Filter(props) {
       <List>
         <ListItem>
           <Link
-            onClick={() => {
-              props.onFilterProducts("New")
+            onClick={e => {
+              e.preventDefault();
+              props.onFilterProducts("New");
             }}
-           
           >
             > New
           </Link>
         </ListItem>
         <ListItem>
           <Link
-            onClick={() => {
-              props.onFilterProducts("Discount")
+            onClick={e => {
+              e.preventDefault();
+              props.onFilterProducts("Discount");
             }}
-            
           >
             > Discount
           </Link>
