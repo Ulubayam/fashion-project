@@ -17,7 +17,7 @@ export const Select = styled.select`
   border: 0;
   border-bottom: 2px solid currentcolor;
   border-radius: 0;
-  background-color: white;
+  background-color: #ececec;
   line-height: 20pt;
   font-size: 14pt;
   margin-top: 10px;

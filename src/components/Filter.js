@@ -15,17 +15,22 @@ const ListItem = styled.li`
     border-top: none;
   }
 `;
-const Link = styled.a`
-  text-decoration: none;
-  color: black;
+const Link = styled.button`
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color: black;
   :hover {
     color: #ff6008;
   }
   :active {
-    text-decoration: underline;
+    color: #ff6008;
   }
 `;
-export const Button = styled.button`
+const Button = styled.button`
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -42,16 +47,16 @@ export const Button = styled.button`
 const List = styled.ul`
   list-style-type: none;
   padding: 0px 20px;
-  background-color: #fff;
+  background-color: #ececec;
 `;
-export const Info = styled.span`
+ const Info = styled.span`
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 12pt;
   line-height: 40pt;
   letter-spacing: 1pt;
   float: left;
 `;
-export const Break = styled.hr`
+const Break = styled.hr`
   border-top: 1px solid gray;
 `;
 
@@ -66,7 +71,7 @@ function Filter(props) {
           <Link
             onClick={e => {
               e.preventDefault();
-              props.onFilterProducts("New");
+              props.onFilterProducts("new");
             }}
           >
             > New
@@ -76,7 +81,7 @@ function Filter(props) {
           <Link
             onClick={e => {
               e.preventDefault();
-              props.onFilterProducts("Discount");
+              props.onFilterProducts("discount");
             }}
           >
             > Discount
