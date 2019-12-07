@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Card = styled.article`
+const Card = styled.article`
   width: 263pt;
   max-height: 390pt;
   flex: 0 0 200px;
@@ -10,21 +10,23 @@ export const Card = styled.article`
   border: 1px solid #ccc;
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
 `;
-export const Image = styled.img`
+const Image = styled.img`
   max-width: 100%;
 `;
-export const Text = styled.div`
+const Text = styled.div`
   padding: 0 20px 20px;
   font-size: 16pt;
   line-height: 25pt;
+  color:black;
 `;
-export const Price = styled.div`
+const Price = styled.div`
   padding: 0 20px 0px;
   font-size: 14pt;
   line-height: 30pt;
+  color:black;
 `;
 
-export const New = styled.span`
+const New = styled.span`
   position: absolute;
   right: -20px;
   top: 10px;
@@ -35,7 +37,7 @@ export const New = styled.span`
   padding: 5px 10px;
   font-size: 20px;
 `;
-export const Discount = styled.span`
+const Discount = styled.span`
   position: absolute;
   left: -20px;
   top: 10px;
@@ -46,7 +48,7 @@ export const Discount = styled.span`
   padding: 5px 10px;
   font-size: 20px;
 `;
-export const Div = styled.div`
+const Div = styled.div`
   position: relative;
   padding-top: 20px;
   display: inline-block;
@@ -60,14 +62,16 @@ function Product(props) {
         to={{
           pathname: `/detail/${id}`,
           products: props
-        }}
+        }} style={{textDecoration: "none"}}
       >
         <Div>
           {badges.map(badge => {
-            return badge === "new" ? (
-              <New>New</New>
-            ) : (
+            return badge === "discount" ? (
               <Discount>Discount</Discount>
+
+              
+            ) : (
+              <New>New</New>
             );
           })}
           <Image src={imageUrl} />

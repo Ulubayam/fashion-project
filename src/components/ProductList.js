@@ -22,7 +22,7 @@ class ProductList extends React.Component {
     };
   }
   getProducts = () => {
-    const apiBaseUrl = "https://newapi.free.beeceptor.com";
+    const apiBaseUrl = "https://deneme.free.beeceptor.com";
     const endpoint = "/products";
     axios.get(`${apiBaseUrl}${endpoint}`).then(response => {
       const data = response.data;
@@ -38,9 +38,11 @@ class ProductList extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    console.log(this.props.order);
     if (prevProps.activeFilter !== this.props.activeFilter) {
       this.filterProducts();
+    }
+    if(this.props.reset === 'reset') {
+      this.getProducts();
     }
     this.state._products.sort((product, product2) => {
       return this.compare(product.products.price, product2.products.price);
@@ -48,7 +50,7 @@ class ProductList extends React.Component {
   }
 
   compare(a, b) {
-    let sortOrder = this.props.order === "high" ? -1 : 1;
+    let sortOrder = this.props.order === "high" ? 1 : -1;
     let direction = 0;
     if (a < b) {
       direction = -1;

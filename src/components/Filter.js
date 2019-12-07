@@ -23,6 +23,8 @@ const Link = styled.button`
     overflow: hidden;
     outline:none;
     color: black;
+    font-size:12pt;
+    letter-spacing:1pt;
   :hover {
     color: #ff6008;
   }
@@ -45,6 +47,7 @@ const Button = styled.button`
   margin-left: 100pt;
 `;
 const List = styled.ul`
+float:left;
   list-style-type: none;
   padding: 0px 20px;
   background-color: #ececec;
@@ -64,17 +67,16 @@ function Filter(props) {
   return (
     <Aside>
       <Info>FILTERS</Info>
-      <Button>RESET</Button>
+      <Button onClick={e =>{ e.preventDefault(); props.resetFilter("reset")}}>RESET</Button>
       <Break />
       <List>
-        <ListItem>
+      <ListItem>
           <Link
             onClick={e => {
               e.preventDefault();
               props.onFilterProducts("new");
-            }}
-          >
-            > New
+            }} style={{textAlign: "left"}}
+          >> New
           </Link>
         </ListItem>
         <ListItem>
@@ -83,10 +85,10 @@ function Filter(props) {
               e.preventDefault();
               props.onFilterProducts("discount");
             }}
-          >
-            > Discount
+          >> Discount
           </Link>
         </ListItem>
+ 
       </List>
     </Aside>
   );
