@@ -3,11 +3,11 @@ import { Product } from "../components";
 import axios from "axios";
 import styled from "styled-components";
 
-export const Section = styled.section`
+const Section = styled.section`
   float: right;
   width: 75%;
 `;
-export const Cards = styled.main`
+const Cards = styled.main`
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
@@ -18,8 +18,7 @@ class ProductList extends React.Component {
     super(props);
     this.state = {
       _products: [],
-      products: [],
-      sorted: false
+      products: []
     };
   }
   getProducts = () => {
@@ -39,18 +38,34 @@ class ProductList extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    console.log(this.props.order);
     if (prevProps.activeFilter !== this.props.activeFilter) {
       this.filterProducts();
     }
+    this.state._products.sort((product, product2) => {
+      return this.compare(product.products.price, product2.products.price);
+    });
   }
+
+  compare(a, b) {
+    let sortOrder = this.props.order === "high" ? -1 : 1;
+    let direction = 0;
+    if (a < b) {
+      direction = -1;
+    }
+    if (a > b) {
+      direction = 1;
+    }
+    return direction * sortOrder;
+  }
+
   filterProducts = () => {
-      let filtered = this.state._products.filter(element => {
-        return element.products.badges.includes(this.props.activeFilter);
-      });
-      this.setState({
-        products: filtered,
-      })
-    
+    let filtered = this.state._products.filter(element => {
+      return element.products.badges.includes(this.props.activeFilter);
+    });
+    this.setState({
+      products: filtered
+    });
   };
 
   render() {

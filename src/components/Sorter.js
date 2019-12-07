@@ -30,25 +30,20 @@ export const Select = styled.select`
 class Sorter extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value: ""
-    };
   }
   handleChange = event => {
-    this.setState({ value: event.target.value });
-    console.log(this.state.value)
+    this.props.order(event.target.value)
   };
+  
   render() {
     return (
         <List>
           <ListItem>Sort By</ListItem>
           <ListItem>
             <Select
-              value={this.state.value}
               onChange={this.handleChange}
               placeholder="Sort"
             >
-              <option value="null">Select Option</option>
               <option value="high">High to Low price</option>
               <option value="low">Low to High price</option>
             </Select>

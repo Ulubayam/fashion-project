@@ -50,7 +50,8 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeFilter: ""
+      activeFilter: "",
+      order: ""
     };
   }
 
@@ -66,16 +67,22 @@ class Home extends React.Component {
       activeFilter: filter
     });
   };
+  changeOrder=(orderType)=> {
+    this.setState({
+      order: orderType
+    })
+
+  }
 
   render() {
     return (
       <Wrapper>
-     <Sorter  />
+     <Sorter order={this.changeOrder}/>
         <Sidebar
           onFilterProducts={this.filterProducts}
           activeFilter={this.state.activeFilter}
         />
-        <ProductList activeFilter={this.state.activeFilter} />
+        <ProductList activeFilter={this.state.activeFilter} order={this.state.order} />
       </Wrapper>
     );
   }
