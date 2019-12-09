@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Cimri.com/static/css/main.02379119.chunk.css",
-    "main.js": "/Cimri.com/static/js/main.d8fa5f03.chunk.js",
-    "main.js.map": "/Cimri.com/static/js/main.d8fa5f03.chunk.js.map",
-    "runtime-main.js": "/Cimri.com/static/js/runtime-main.87754959.js",
-    "runtime-main.js.map": "/Cimri.com/static/js/runtime-main.87754959.js.map",
-    "static/js/2.8c3a5a3b.chunk.js": "/Cimri.com/static/js/2.8c3a5a3b.chunk.js",
-    "static/js/2.8c3a5a3b.chunk.js.map": "/Cimri.com/static/js/2.8c3a5a3b.chunk.js.map",
-    "index.html": "/Cimri.com/index.html",
-    "precache-manifest.0288271b2011fe329eea685c1b2dabac.js": "/Cimri.com/precache-manifest.0288271b2011fe329eea685c1b2dabac.js",
-    "service-worker.js": "/Cimri.com/service-worker.js",
-    "static/css/main.02379119.chunk.css.map": "/Cimri.com/static/css/main.02379119.chunk.css.map"
+    "main.css": "/cimri-project/static/css/main.02379119.chunk.css",
+    "main.js": "/cimri-project/static/js/main.d3e4c8ae.chunk.js",
+    "main.js.map": "/cimri-project/static/js/main.d3e4c8ae.chunk.js.map",
+    "runtime-main.js": "/cimri-project/static/js/runtime-main.7635ab2f.js",
+    "runtime-main.js.map": "/cimri-project/static/js/runtime-main.7635ab2f.js.map",
+    "static/js/2.4082d382.chunk.js": "/cimri-project/static/js/2.4082d382.chunk.js",
+    "static/js/2.4082d382.chunk.js.map": "/cimri-project/static/js/2.4082d382.chunk.js.map",
+    "index.html": "/cimri-project/index.html",
+    "precache-manifest.28b534ec351b8de15ebafdfec85940a1.js": "/cimri-project/precache-manifest.28b534ec351b8de15ebafdfec85940a1.js",
+    "service-worker.js": "/cimri-project/service-worker.js",
+    "static/css/main.02379119.chunk.css.map": "/cimri-project/static/css/main.02379119.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.87754959.js",
-    "static/js/2.8c3a5a3b.chunk.js",
+    "static/js/runtime-main.7635ab2f.js",
+    "static/js/2.4082d382.chunk.js",
     "static/css/main.02379119.chunk.css",
-    "static/js/main.d8fa5f03.chunk.js"
+    "static/js/main.d3e4c8ae.chunk.js"
   ]
 }
