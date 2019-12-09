@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   width: 80%;
   margin: 0 auto;
-  margin-top:20px;
+  margin-top: 20px;
 `;
 
 class Home extends React.Component {
@@ -14,7 +14,7 @@ class Home extends React.Component {
     this.state = {
       activeFilter: "",
       order: "",
-      reset: ""
+      reset: false
     };
   }
 
@@ -22,36 +22,44 @@ class Home extends React.Component {
     document.title = "Home";
   }
   componentWillUnmount() {
-    document.title = "Fashion";
+    document.title = "Detail";
   }
 
-  filterProducts = (filter) => {
+  filterProducts = filter => {
     this.setState({
-      activeFilter: filter
+      activeFilter: filter,
+      reset: false
     });
   };
-  changeOrder=(orderType)=> {
+  changeOrder = orderType => {
     this.setState({
-      order: orderType
-    })
+      order: orderType,
+      reset: false
+    });
   };
 
-  resetFilter = (reset) => {
-    this.setState({
-      reset: reset
-    })
-  }
+  resetFilter = () => {
+    this.setState(state => ({
+      reset: !state.reset,
+      activeFilter: "",
+      order: ""
+    }));
+  };
 
   render() {
     return (
       <Wrapper>
-      <Sorter order={this.changeOrder}/>
+        <Sorter order={this.changeOrder} />
         <Sidebar
           onFilterProducts={this.filterProducts}
           activeFilter={this.state.activeFilter}
-          resetFilter = {this.resetFilter}
+          resetFilter={this.resetFilter}
         />
-        <ProductList activeFilter={this.state.activeFilter} order={this.state.order} reset={this.state.reset} />
+        <ProductList
+          activeFilter={this.state.activeFilter}
+          order={this.state.order}
+          reset={this.state.reset}
+        />
       </Wrapper>
     );
   }

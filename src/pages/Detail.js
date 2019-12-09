@@ -53,17 +53,23 @@ class Detail extends React.Component {
 
   getProduct = () => {
     const id = this.props.match.params.id;
-    const apiBaseUrl = "https://productapi.free.beeceptor.com";
+    const apiBaseUrl = "https://cimri.free.beeceptor.com";
     const endpoint = "/product/" + id;
-    axios.get(`${apiBaseUrl}${endpoint}`).then(response => {
-      this.setState({
-        productDetail: response.data[0].products
+    axios
+      .get(`${apiBaseUrl}${endpoint}`, {
+        headers: {
+          "Access-Control-Allow-Origin": "*"
+        }
+      })
+      .then(response => {
+        this.setState({
+          productDetail: response.data[0].products
+        });
       });
-    });
   };
 
   render() {
-    const {imageUrl, content, price } = this.state.productDetail;
+    const { imageUrl, content, price } = this.state.productDetail;
     return (
       <Card>
         <Container>

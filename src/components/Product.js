@@ -17,33 +17,31 @@ const Text = styled.div`
   padding: 0 20px 20px;
   font-size: 16pt;
   line-height: 25pt;
-  color:black;
+  color: black;
 `;
 const Price = styled.div`
   padding: 0 20px 0px;
   font-size: 14pt;
   line-height: 30pt;
-  color:black;
+  color: black;
 `;
 
 const New = styled.span`
   position: absolute;
-  right: -20px;
+  left: -20px;
   top: 10px;
-  background: cornflowerblue;
+  background: #ff6008;
   text-align: center;
-  border-radius: 30px 30px 30px 30px;
   color: white;
   padding: 5px 10px;
   font-size: 20px;
 `;
 const Discount = styled.span`
   position: absolute;
-  left: -20px;
+  right: -20px;
   top: 10px;
-  background: indianred;
+  background: cornflowerblue;
   text-align: center;
-  border-radius: 30px 30px 30px 30px;
   color: white;
   padding: 5px 10px;
   font-size: 20px;
@@ -62,14 +60,13 @@ function Product(props) {
         to={{
           pathname: `/detail/${id}`,
           products: props
-        }} style={{textDecoration: "none"}}
+        }}
+        style={{ textDecoration: "none" }}
       >
         <Div>
           {badges.map(badge => {
             return badge === "discount" ? (
               <Discount>Discount</Discount>
-
-              
             ) : (
               <New>New</New>
             );

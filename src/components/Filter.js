@@ -16,15 +16,15 @@ const ListItem = styled.li`
   }
 `;
 const Link = styled.button`
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-    color: black;
-    font-size:12pt;
-    letter-spacing:1pt;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: black;
+  font-size: 12pt;
+  letter-spacing: 1pt;
   :hover {
     color: #ff6008;
   }
@@ -47,12 +47,12 @@ const Button = styled.button`
   margin-left: 100pt;
 `;
 const List = styled.ul`
-float:left;
+  float: left;
   list-style-type: none;
   padding: 0px 20px;
   background-color: #ececec;
 `;
- const Info = styled.span`
+const Info = styled.span`
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 12pt;
   line-height: 40pt;
@@ -67,16 +67,25 @@ function Filter(props) {
   return (
     <Aside>
       <Info>FILTERS</Info>
-      <Button onClick={e =>{ e.preventDefault(); props.resetFilter("reset")}}>RESET</Button>
+      <Button
+        onClick={e => {
+          e.preventDefault();
+          props.resetFilter();
+        }}
+      >
+        RESET
+      </Button>
       <Break />
       <List>
-      <ListItem>
+        <ListItem>
           <Link
             onClick={e => {
               e.preventDefault();
               props.onFilterProducts("new");
-            }} style={{textAlign: "left"}}
-          >> New
+            }}
+            style={{ textAlign: "left" }}
+          >
+            > New
           </Link>
         </ListItem>
         <ListItem>
@@ -85,10 +94,10 @@ function Filter(props) {
               e.preventDefault();
               props.onFilterProducts("discount");
             }}
-          >> Discount
+          >
+            > Discount
           </Link>
         </ListItem>
- 
       </List>
     </Aside>
   );

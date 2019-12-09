@@ -7,7 +7,7 @@ function Sidebar(props) {
       <Filter
         onFilterProducts={props.onFilterProducts}
         activeFilter={props.activeFilter}
-        resetFilter = {props.resetFilter}
+        resetFilter={props.resetFilter}
       />
     </div>
   );

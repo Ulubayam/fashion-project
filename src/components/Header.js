@@ -20,7 +20,7 @@ const Title = styled.h1`
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-weight: lighter;
   line-height: 40px;
-  text-align:center;
+  text-align: center;
   padding-top: 25px;
 `;
 

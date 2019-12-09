@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const List = styled.ul`
-float:right;
+  float: right;
 `;
 const ListItem = styled.li`
   list-style: none;
@@ -29,24 +29,21 @@ const Select = styled.select`
 `;
 class Sorter extends React.Component {
   handleChange = event => {
-    this.props.order(event.target.value)
+    this.props.order(event.target.value);
   };
-  
+
   render() {
     return (
-        <List>
-          <ListItem>Sort By</ListItem>
-          <ListItem>
-            <Select
-              onChange={this.handleChange}
-              placeholder="Sort"
-            >
-              <option>Select Option</option>
-              <option value="high">High to Low price</option>
-              <option value="low">Low to High price</option>
-            </Select>
-          </ListItem>
-        </List>
+      <List>
+        <ListItem>Sort By</ListItem>
+        <ListItem>
+          <Select onChange={this.handleChange} placeholder="Sort">
+            <option value="">Select Option</option>
+            <option value="high">High to Low price</option>
+            <option value="low">Low to High price</option>
+          </Select>
+        </ListItem>
+      </List>
     );
   }
 }
