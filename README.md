@@ -6,7 +6,7 @@ You can filter new and discounted products on this project, sort the price. You 
 
 ### **Live Preview**
 
-You can[ view the app live here.](https://ulubayam.github.io/cimri-project/#/)
+You can[ view the app live here.](http://Ulubayam.github.io/fashion-project)
 
 ## Available Scripts
 
