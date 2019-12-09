@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/cimri.com/static/css/main.02379119.chunk.css",
+    "main.js": "/cimri.com/static/js/main.0c29cd57.chunk.js",
+    "main.js.map": "/cimri.com/static/js/main.0c29cd57.chunk.js.map",
+    "runtime-main.js": "/cimri.com/static/js/runtime-main.114a898d.js",
+    "runtime-main.js.map": "/cimri.com/static/js/runtime-main.114a898d.js.map",
+    "static/js/2.d436925f.chunk.js": "/cimri.com/static/js/2.d436925f.chunk.js",
+    "static/js/2.d436925f.chunk.js.map": "/cimri.com/static/js/2.d436925f.chunk.js.map",
+    "index.html": "/cimri.com/index.html",
+    "precache-manifest.2845b82e3b8e157c7bdb3489e72ac9d2.js": "/cimri.com/precache-manifest.2845b82e3b8e157c7bdb3489e72ac9d2.js",
+    "service-worker.js": "/cimri.com/service-worker.js",
+    "static/css/main.02379119.chunk.css.map": "/cimri.com/static/css/main.02379119.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.114a898d.js",
+    "static/js/2.d436925f.chunk.js",
+    "static/css/main.02379119.chunk.css",
+    "static/js/main.0c29cd57.chunk.js"
+  ]
+}
