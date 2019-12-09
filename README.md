@@ -1,10 +1,10 @@
-###**Fashion App**
+### **Fashion App**
 
 You can filter new and discounted products on this project, sort the price. You can also see the details by clicking the product you like.
 
 ![cimri1](https://user-images.githubusercontent.com/20074961/70425595-8fde4280-1a82-11ea-9acd-034c9e803f57.png)
 
-###**Live Preview**
+### **Live Preview**
 
 You can[ view the app live here.](https://ulubayam.github.io/cimri-project/#/)
 
